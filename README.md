@@ -2,6 +2,22 @@
 
 기존에 쓰던 Home Assistant를 백엔드(자동제어 엔진)로 그대로 두고, 그 위에 우리 브랜드로 만든 전용 제어 화면입니다. 조명·스위치·음향·센서·장면(큐)을 한 화면에서 켜고 끄고, 모바일 홈 화면에 앱처럼 설치할 수 있습니다.
 
+## 실행 주소 (GitHub Pages)
+
+**https://macite2014.github.io/sorinamoo-assistant/**
+
+이 주소로 바로 접속해서 사용할 수 있습니다. 모바일에서 열고 "홈 화면에 추가"하면 앱처럼 아이콘이 생깁니다.
+
+## ⚠️ 중요: HTTPS ↔ HTTP 주의사항
+
+위 GitHub Pages 주소는 `https://`로 제공됩니다. 그런데 댁/현장의 Home Assistant 서버가 `http://192.168.x.x:8123`처럼 암호화되지 않은 주소라면, 브라우저가 보안 정책(Mixed Content)으로 인해 연결을 차단할 수 있습니다.
+
+해결 방법 (택 1):
+1. **Home Assistant에 HTTPS 적용**: Nabu Casa 클라우드 연결, 또는 Cloudflare Tunnel / Nginx Proxy Manager 등으로 `https://` 주소를 만들어 그 주소로 연결
+2. **앱을 로컬에서 직접 실행**: GitHub Pages 대신 `index.html`을 PC에서 직접 열거나, 같은 네트워크의 서버(라즈베리파이 등)에서 `http://`로 띄워서 사용 (이 경우 Mixed Content 제한이 없음)
+
+데모 모드는 이 문제와 무관하게 항상 정상 동작합니다.
+
 ## 구성 파일
 
 - `index.html` — 앱 본체 (이 파일 하나로 동작)
